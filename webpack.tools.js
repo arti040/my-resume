@@ -1,7 +1,7 @@
-const path = require('path');
+const path               = require('path');
 const webpack            = require('webpack');
 const HtmlWebpackPlugin  = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin  = require('extract-text-webpack-plugin');
 const UglifyJSPlugin     = require('uglifyjs-webpack-plugin');
 
 
@@ -102,7 +102,7 @@ exports.setPlugins = function(ENV) {
                     Use this if you want separate CSS files
                 */
                 //new ExtractTextPlugin('style.css'),
-                
+
                 new HtmlWebpackPlugin({
                     template: 'index.html',
                     css: '/style.css',
