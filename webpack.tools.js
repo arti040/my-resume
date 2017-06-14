@@ -1,6 +1,8 @@
 const path = require('path');
 const webpack            = require('webpack');
 const HtmlWebpackPlugin  = require('html-webpack-plugin');
+const UglifyJSPlugin     = require('uglifyjs-webpack-plugin');
+
 
 let webpackLoaders = {
     babelLoader: {
@@ -8,7 +10,7 @@ let webpackLoaders = {
         exclude: /node_modules/,
         use: [{
             loader: 'babel-loader',
-            options: { presets: ['es2015'] }
+            options: { presets: ['env'] }
         }]
     },
     sassLoader: {
@@ -79,7 +81,13 @@ exports.setPlugins = function(ENV) {
             );
         break;
         case 'prod':
-            // todo
+            plugins.push(
+                new HtmlWebpackPlugin({
+                    template: 'index.html',
+                    inject: 'body'
+                }),
+                new UglifyJSPlugin()
+            )
         break;
         case 'test':
             // todo
