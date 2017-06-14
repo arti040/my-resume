@@ -35,7 +35,7 @@ exports.setOutput = function (ENV, dir, filepath) {
   let output = ENV == 'test' ? {} : {
     path:           path.resolve(dir,filepath),
     publicPath:     ENV === 'prod' ? '/' : 'http://localhost:8080/',
-    filename:       ENV === 'prod' ? '[name][hash].js' : '[name].bundle.js',
+    filename:       ENV === 'prod' ? '[name]-[hash].js' : '[name].bundle.js',
   };
   return output;
 };
@@ -69,9 +69,7 @@ exports.setPlugins = function(ENV) {
         case 'dev':
             plugins.push(
                 new HtmlWebpackPlugin({
-                    entry: 'index.html',
-                    template: './index.html',
-                    inject: 'body',
+                    template: 'index.html'
                 }), 
                 new webpack.ProvidePlugin({   
                     jQuery: 'jquery',
@@ -84,7 +82,13 @@ exports.setPlugins = function(ENV) {
             plugins.push(
                 new HtmlWebpackPlugin({
                     template: 'index.html',
-                    inject: 'body'
+                    minify: {
+                        removeAttributeQuotes: true,
+                        removeComments: true,
+                        collapseInlineTagWhitespace: true,
+                        collapseWhitespace: true,
+                        conservativeCollapse: false
+                    }
                 }),
                 new UglifyJSPlugin()
             )

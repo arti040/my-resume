@@ -31,6 +31,5 @@ module.exports = WebPackConfig(process.env.NODE_ENV);
 
 /*	TODO
 	- add css minification for prod (postcss)
-	- add js minification for prod
 	- add karma&jasmine (tests)
 */
