@@ -1,8 +1,6 @@
 const path 				= require('path');
 const webpack 			= require('webpack');
 const webpackTools    	= require('./webpack.tools');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 
 function WebPackConfig(ENV) {
 	let config = {}
@@ -29,6 +27,5 @@ function WebPackConfig(ENV) {
 module.exports = WebPackConfig(process.env.NODE_ENV);
 
 /*	TODO
-	- add css prefixes for prod (postcss)
 	- add karma&jasmine (tests)
 */

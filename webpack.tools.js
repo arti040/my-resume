@@ -1,5 +1,6 @@
 const path               = require('path');
 const webpack            = require('webpack');
+const opts    	         = require('./webpack.opts');
 const HtmlWebpackPlugin  = require('html-webpack-plugin');
 const ExtractTextPlugin  = require('extract-text-webpack-plugin');
 const UglifyJSPlugin     = require('uglifyjs-webpack-plugin');
@@ -15,7 +16,7 @@ let webpackLoaders = {
         }]
     },
     sassLoader: (ENV) => ({
-        test: /\.sass$/,
+        test: /\.(sass|scss)$/,
         /*
             Use this if you want separate CSS files
         */
@@ -43,8 +44,17 @@ let webpackLoaders = {
 }
 
 exports.setEntry = function (ENV, entryUrl) {
-  let entry = ENV === 'test' ? {} : [ 'bootstrap-loader', entryUrl ];
-  return entry;
+  let entry = ENV === 'test' ? {} : [ entryUrl ];
+  
+  if(opts.frameworks.bootstrap) {
+      if(opts.frameworks.gridBootstrapOnly) {
+        entry.push('bootstrap-sass');
+        return entry;
+      }
+      entry.push('bootstrap-loader');
+      return entry;
+  }
+  return entry; 
 };
 
 exports.setOutput = function (ENV, dir, filepath) {
@@ -121,9 +131,7 @@ exports.setPlugins = function(ENV) {
             // todo
         break;
     }
-		
-		
-
+	
 
     return plugins;
 }
