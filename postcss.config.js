@@ -1,9 +1,6 @@
-module.exports = {
-  parser: 'sugarss',
-  plugins: {
-    'postcss-import': {},
-    'cssnext': {},
-    'autoprefixer': {},
-    'cssnano': {}
-  }
-}
+module.exports = (ctx) => ({
+    map: ctx.env === 'prod' ? false : 'inline',
+    plugins: [
+      require('autoprefixer')
+    ]
+  })

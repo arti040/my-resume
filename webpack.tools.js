@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack            = require('webpack');
 const HtmlWebpackPlugin  = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJSPlugin     = require('uglifyjs-webpack-plugin');
 
 
@@ -13,21 +14,36 @@ let webpackLoaders = {
             options: { presets: ['env'] }
         }]
     },
-    sassLoader: {
+    sassLoader: (ENV) => ({
         test: /\.sass$/,
-        loader: ['style-loader', 'css-loader', 'sass-loader']
-	},
+        /*
+            Use this if you want separate CSS files
+        */
+        // use: ExtractTextPlugin.extract({
+        //     fallback: 'style-loader',
+        //     use: [
+        //         {
+        //             loader: 'css-loader',
+        //             query: {
+        //                 sourceMap: ENV === 'dev' ? true : false,
+        //                 importLoaders: 2,
+        //                 minimize: true
+        //             }
+        //         },
+        //         'postcss-loader',
+        //         'sass-loader'
+        //     ]
+        // })
+        loader: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+    }),
     assetsLoader: {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
         loader: 'file-loader'
-	},
-    cssLoader: function(ENV) { return null; }
+    }
 }
 
 exports.setEntry = function (ENV, entryUrl) {
-  let entry = ENV === 'test' ? {} : {
-    app: entryUrl
-  };
+  let entry = ENV === 'test' ? {} : [ 'bootstrap-loader', entryUrl ];
   return entry;
 };
 
@@ -57,31 +73,39 @@ exports.setRules = function(ENV) {
     return [
         webpackLoaders.babelLoader,
         webpackLoaders.assetsLoader,
-        webpackLoaders.sassLoader,
-        // webpackLoaders.htmlLoader,
-        // webpackLoaders.cssLoader(ENV),
+        webpackLoaders.sassLoader(ENV),
     ]; 
 }
 
 exports.setPlugins = function(ENV) {
     let plugins = [];
+
+    plugins.push(
+        new webpack.ProvidePlugin({   
+            jQuery: 'jquery',
+            $: 'jquery',
+            jquery: 'jquery'
+        })
+    );
+
     switch(ENV) {
         case 'dev':
             plugins.push(
                 new HtmlWebpackPlugin({
                     template: 'index.html'
-                }), 
-                new webpack.ProvidePlugin({   
-                    jQuery: 'jquery',
-                    $: 'jquery',
-                    jquery: 'jquery'
                 })
             );
         break;
         case 'prod':
             plugins.push(
+                /*
+                    Use this if you want separate CSS files
+                */
+                //new ExtractTextPlugin('style.css'),
+                
                 new HtmlWebpackPlugin({
                     template: 'index.html',
+                    css: '/style.css',
                     minify: {
                         removeAttributeQuotes: true,
                         removeComments: true,

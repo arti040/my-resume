@@ -11,7 +11,6 @@ function WebPackConfig(ENV) {
 	config.entry 		= webpackTools.setEntry(ENV, './app.js');
 	config.output 		= webpackTools.setOutput(ENV, __dirname, './dist');
 	config.devServer 	= webpackTools.setDevServer(__dirname, './app');
-	//config.postCSS 	= null;
 	config.module 		= {	rules: webpackTools.setRules(ENV) }
 	config.plugins 		= webpackTools.setPlugins(ENV);
 	config.resolve		= {
@@ -30,6 +29,6 @@ function WebPackConfig(ENV) {
 module.exports = WebPackConfig(process.env.NODE_ENV);
 
 /*	TODO
-	- add css minification for prod (postcss)
+	- add css prefixes for prod (postcss)
 	- add karma&jasmine (tests)
 */
