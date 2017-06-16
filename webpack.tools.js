@@ -38,20 +38,30 @@ let webpackLoaders = {
         loader: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
     }),
     assetsLoader: {
-        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
+        test: /\.(png|jpg|jpeg|gif)$/,
         loader: 'file-loader'
+    },
+    fontsLoader: {
+        test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
+        loader: "file-loader"
     }
 }
 
 exports.setEntry = function (ENV, entryUrl) {
   let entry = ENV === 'test' ? {} : [ entryUrl ];
   
+//   if(opts.icons.ionicons) {
+//       entry.push(opts.icons.sources.ionicons);
+//   }
+//   if(opts.icons.fontAwesome) {
+//       entry.push(opts.icons.sources.fontAwesome);
+//   }
   if(opts.frameworks.bootstrap) {
       if(opts.frameworks.gridBootstrapOnly) {
-        entry.push('bootstrap-sass-grid');
+        entry.push(opts.frameworks.sources.grid);
         return entry;
       }
-      entry.push('bootstrap-loader');
+      entry.push(opts.frameworks.sources.bootstrap);
       return entry;
   }
   return entry; 
@@ -83,6 +93,7 @@ exports.setRules = function(ENV) {
     return [
         webpackLoaders.babelLoader,
         webpackLoaders.assetsLoader,
+        webpackLoaders.fontsLoader,
         webpackLoaders.sassLoader(ENV),
     ]; 
 }

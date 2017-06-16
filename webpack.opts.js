@@ -1,10 +1,11 @@
+
 module.exports = {
     frameworks: {
         bootstrap: true,
         gridBootstrapOnly: false,
-    },
-    icons: {
-        ionicons: false,
-        fontAwesome: false
+        sources: {
+            bootstrap: 'bootstrap-loader',
+            grid: 'bootstrap-sass-grid'
+        }
     }
 }
