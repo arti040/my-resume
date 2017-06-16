@@ -4,26 +4,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <!--TODO: replace it with link-media-html-webpack-plugin -->
-    <!--<link rel="stylesheet" href="<%= htmlWebpackPlugin.options.css %>" />-->
-    <title>Webpack App Starter 2.0</title>
-    <base href="/" />
+    <title>Piotr Potera - Curriculum Vitae</title>
   </head>
-  <body>
-    <div class="row">
-      <div class="col-md-6">
-        <ul class="list list--no-bullets">
-            <li class="list__item">Lorem ipsum</li>
-            <li class="list__item">Dolor sit amet</li>
-        </ul>
-      </div>
-      <div class="col-md-6">
-        <a class="btn btn-primary">
-          <i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
-          Go!
-        </a>
-      </div>
+  <body class="container">
+    <header class="row">
+      <section class="col-sm-6">
+        <img class="shape shape-type--circle shape-xs-size--large shape-md-size--medium" src="http://placekitten.com/128/96" alt="Profile picture">
+      </section>
+      <section class="col-sm-6">
+        Contact Info
+      </section>
+    </header>
+    <div id="content" class="row">
+      <section class="col-sm-6">
+        Work Expirience
+      </section>
+      <section class="col-sm-6">
+        Skills & Competences
+      </section>
+      <section class="col">
+        Hobbies & Interests
+      </section>
     </div>
-    <app></app>
+    <footer class="row">
+      <p class="paragraph text--small text--center">&copy; Piotr Potera</p>
+    </footer>
   </body>
 </html>

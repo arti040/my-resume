@@ -1,0 +1,64 @@
+
+
+// Variables
+$small:     32px
+$medium:    64px
+$large:     96px
+
+$breakpoints: -sm, -md, -xs
+
+
+// Functions
+=setSquareSize($size)
+    width: $size
+    height: $size
+
+@mixin setSizeModificators()
+    &--small
+        +setSquareSize($small)
+    &--medium
+        +setSquareSize($medium)
+    &--large
+        +setSquareSize($large)
+
+
+// Styles
+.shape
+    display: flex
+
+    &-size
+        @include setSizeModificators()
+        
+
+    &-type
+        &--rounded
+            border-radius: $radius-medium
+        &--circle
+            border-radius: $radius-circle
+
+  
+// @media (max-width: $screen-md) 
+//     .shape
+//         @each $item in $breakpoints
+//             &#{$item}
+//                 &-size
+//                     @include setSizeModificators()
+
+
+@media (max-width: $screen-md) 
+    .shape    
+        &-md
+            &-size 
+                @include setSizeModificators()
+
+@media (max-width: $screen-sm) 
+    .shape    
+        &-sm
+            &-size 
+                @include setSizeModificators()
+
+@media (max-width: $screen-xs) 
+    .shape
+        &-xs
+            &-size
+                @include setSizeModificators()
