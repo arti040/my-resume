@@ -5,7 +5,7 @@ const webpackTools    	= require('./webpack.tools');
 function WebPackConfig(ENV) {
 	let config = {}
 
-	config.context 		= path.resolve(__dirname, './');
+	config.context 		= path.resolve(__dirname, '');
 	config.entry 		= webpackTools.setEntry(ENV, './app/app.js');
 	config.output 		= webpackTools.setOutput(ENV, __dirname, './dist');
 	config.devServer 	= webpackTools.setDevServer(__dirname, './app');

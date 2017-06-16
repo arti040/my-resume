@@ -15,6 +15,10 @@ let webpackLoaders = {
             options: { presets: ['env'] }
         }]
     },
+    cssLoader: {
+        test: /\.css$/,
+        loader: ['style-loader', 'css-loader']
+    },
     sassLoader: (ENV) => ({
         test: /\.(sass|scss)$/,
         /*
@@ -94,6 +98,7 @@ exports.setRules = function(ENV) {
         webpackLoaders.babelLoader,
         webpackLoaders.assetsLoader,
         webpackLoaders.fontsLoader,
+        webpackLoaders.cssLoader,
         webpackLoaders.sassLoader(ENV),
     ]; 
 }

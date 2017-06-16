@@ -1,9 +1,10 @@
 
+// === Vendor styles and libraries not loadable via Webpack
 import './vendors';
 
 console.log('Yo!');
 
-// === Styles
+// === App Styles
 import './atomic.sass';
 
 class Foo {
