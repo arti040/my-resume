@@ -1,7 +1,7 @@
 module.exports = {
     frameworks: {
         bootstrap: true,
-        gridBootstrapOnly: true,
+        gridBootstrapOnly: false,
     },
     icons: {
         ionicons: false,

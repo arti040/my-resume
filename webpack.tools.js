@@ -48,7 +48,7 @@ exports.setEntry = function (ENV, entryUrl) {
   
   if(opts.frameworks.bootstrap) {
       if(opts.frameworks.gridBootstrapOnly) {
-        entry.push('bootstrap-sass');
+        entry.push('bootstrap-sass-grid');
         return entry;
       }
       entry.push('bootstrap-loader');
