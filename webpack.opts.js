@@ -7,5 +7,11 @@ module.exports = {
             bootstrap: 'bootstrap-loader',
             grid: 'bootstrap-sass-grid'
         }
+    },
+    settings: {
+        prod: {
+            minHTML: true,
+            minJS: true
+        }
     }
 }

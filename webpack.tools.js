@@ -123,6 +123,19 @@ exports.setPlugins = function(ENV) {
             );
         break;
         case 'prod':
+
+            let minifyHTML;
+            if(opts.settings.prod.minHTML) {
+                minifyHTML = {
+                    removeAttributeQuotes: true,
+                    removeComments: true,
+                    collapseInlineTagWhitespace: true,
+                    collapseWhitespace: true,
+                    conservativeCollapse: false
+                }
+            } 
+            else { minifyHTML = false }
+
             plugins.push(
                 /*
                     Use this if you want separate CSS files
@@ -132,16 +145,11 @@ exports.setPlugins = function(ENV) {
                 new HtmlWebpackPlugin({
                     template: 'app/index.html',
                     //css: '/style.css',
-                    minify: {
-                        removeAttributeQuotes: true,
-                        removeComments: true,
-                        collapseInlineTagWhitespace: true,
-                        collapseWhitespace: true,
-                        conservativeCollapse: false
-                    }
-                }),
-                new UglifyJSPlugin()
+                    minify: minifyHTML
+                })
             )
+            if(opts.settings.prod.minJS) { plugins.push(new UglifyJSPlugin()); }
+            
         break;
         case 'test':
             // todo
