@@ -102,7 +102,7 @@ exports.setPlugins = function(ENV) {
         case 'dev':
             plugins.push(
                 new HtmlWebpackPlugin({
-                    template: 'index.html'
+                    template: 'app/index.html'
                 })
             );
         break;
@@ -114,8 +114,8 @@ exports.setPlugins = function(ENV) {
                 //new ExtractTextPlugin('style.css'),
 
                 new HtmlWebpackPlugin({
-                    template: 'index.html',
-                    css: '/style.css',
+                    template: 'app/index.html',
+                    //css: '/style.css',
                     minify: {
                         removeAttributeQuotes: true,
                         removeComments: true,
