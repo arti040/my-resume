@@ -5,9 +5,6 @@ $small:     32px
 $medium:    64px
 $large:     96px
 
-$breakpoints: -sm, -md, -xs
-
-
 // Functions
 =setSquareSize($size)
     width: $size
@@ -36,29 +33,24 @@ $breakpoints: -sm, -md, -xs
         &--circle
             border-radius: $radius-circle
 
-  
-// @media (max-width: $screen-md) 
-//     .shape
-//         @each $item in $breakpoints
-//             &#{$item}
-//                 &-size
-//                     @include setSizeModificators()
-
-
-@media (max-width: $screen-md) 
-    .shape    
-        &-md
-            &-size 
+@media (min-width: $screen-xs) 
+    .shape
+        &-xs
+            &-size
                 @include setSizeModificators()
 
-@media (max-width: $screen-sm) 
+
+@media (min-width: $screen-sm) 
     .shape    
         &-sm
             &-size 
                 @include setSizeModificators()
 
-@media (max-width: $screen-xs) 
-    .shape
-        &-xs
-            &-size
+@media (min-width: $screen-md) 
+    .shape    
+        &-md
+            &-size 
                 @include setSizeModificators()
+
+
+
