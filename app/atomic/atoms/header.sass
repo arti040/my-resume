@@ -1,17 +1,18 @@
 
 /// @name Headers
 .header
-  +setFontSet($font-size-header--base, $font-weight--normal)
-  +withoutSpacing()
-  //color: $header-color--default
-  &--em
-    font-style: normal
-  a
-    color: inherit
+    +setFontSet($font-size-header--base, $font-weight--normal)
+    +withoutSpacing()
+    //color: $header-color--default
+    &--em
+        font-style: normal
+    a
+        color: inherit
 
 /// @name Header sizes
 .header
-  &--main
+    color: $color-black
+    &--main
     +setFontSet($font-size-header--large, $font-weight--light, capitalize)
-  &--section
+    &--section
     +setFontSet($font-size-header--base,  $font-weight--light, capitalize)

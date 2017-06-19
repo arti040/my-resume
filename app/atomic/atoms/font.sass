@@ -11,9 +11,9 @@ $font-size-base:            62.5%
 /// @type px
 $font-size-text--tiny:      9px
 /// @type px
-$font-size-text--small:     12px
+$font-size-text--small:     13px
 /// @type px
-$font-size-text--base:      14px
+$font-size-text--base:      15px
 /// @type px
 $font-size-text--large:     18px
 
@@ -36,12 +36,12 @@ $font-weight--bold:         700
 /// @name Font Size Mixin
 /// @output { font-size: 1rem; font-size: 14px }
 =fontSize($size)
-  font-size: $size
+    font-size: $size
 
 // @name setFontSet Mixin
-=setFontSet($fontSize, $font-weight, $transform: none)
-  font-family: $font-family--base
-  font-weight: $font-weight
-  line-height: $fontSize
-  text-transform: $transform
-  +fontSize($fontSize)
+=setFontSet($fontSize, $font-weight: normal, $transform: none)
+    font-family: $font-family--base
+    font-weight: $font-weight
+    line-height: $fontSize
+    text-transform: $transform
+    +fontSize($fontSize)
