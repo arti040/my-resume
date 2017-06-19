@@ -1,0 +1,92 @@
+
+/// @type px
+$spacing-small:       4px
+/// @type px
+$spacing-base:        10px
+/// @type px
+$spacing-medium:      15px
+/// @type px
+$spacing-large:       30px
+
+/// @type list of strings
+$spacing-names: 'left', 'top', 'right', 'bottom'
+
+/// @name Basic Spacing Config
+/// @example
+///  +withoutSpacing(false, true, left)
+///  result: padding-left: 0
+=withoutSpacing($margin: true, $padding: true, $side: null)
+  $margin-name:   'margin'
+  $padding-name:  'padding'
+  @if $side != null
+    $margin-name:  'margin-#{$side}'
+    $padding-name: 'padding-#{$side}'
+  @if $margin == true
+    #{$margin-name}: 0
+  @if $padding == true
+    #{$padding-name}: 0
+    
+
+/// @name No spacing classes generator
+=generateNoSpacingClasses($spacingType)
+  @each $name in $spacing-names
+    $spacing-name: '&-#{$name}--none'
+    // class name &-top--none
+    #{$spacing-name}
+      // set paddings or margins
+      @if $spacingType == 'padding'
+        +withoutSpacing(false, true, $name)
+      @if $spacingType == 'margin'
+        +withoutSpacing(true, false, $name)
+
+/// @name Modifier spacing classes generator
+=generateSpacingModifierClasses($name, $direction:false)
+  @if $direction == false
+    &--base
+      #{$name}: $spacing-base
+    &--small
+      #{$name}: $spacing-small
+    &--medium
+      #{$name}: $spacing-medium
+    &--large
+      #{$name}: $spacing-large
+    &--none
+      #{$name}: 0 !important
+  @else
+    &--base
+      #{$name}-#{$direction}: $spacing-base
+    &--small
+      #{$name}-#{$direction}: $spacing-small
+    &--medium
+      #{$name}-#{$direction}: $spacing-medium
+    &--large
+      #{$name}-#{$direction}: $spacing-large
+    &--none
+      #{$name}-#{$direction}: 0 !important
+
+// @name Spacing Classes generator
+=generateSpacingClasses($name)
+  // Generate four side spacing class
+  +generateSpacingModifierClasses($name, false)
+  &-left
+    +generateSpacingModifierClasses($name, 'left')
+  &-top
+    +generateSpacingModifierClasses($name, 'top')
+  &-right
+    +generateSpacingModifierClasses($name, 'right')
+  &-bottom
+    +generateSpacingModifierClasses($name, 'bottom')
+
+/// @desc use it like margin-[direction]--[modifier*]
+/// @example margin-top--small
+/// @example margin-top
+.margin
+  +generateNoSpacingClasses('margin')
+  +generateSpacingClasses('margin')
+
+/// @desc use it like padding-[direction]--[modifier*]
+//        * modifier is optional
+/// @example padding-top--small
+.padding
+  +generateNoSpacingClasses('padding')
+  +generateSpacingClasses('padding')
