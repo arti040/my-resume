@@ -1,0 +1,17 @@
+
+.flex 
+    display: flex
+    flex-direction: column
+
+    &--row
+        flex-direction: row
+
+@media (min-width: $screen-xs) 
+    .flex
+        &-xs
+            &--column
+                flex-direction: column
+        &-xs
+            &--row
+                flex-direction: row
+
