@@ -1,0 +1,20 @@
+
+$small: 20px
+$medium: 30px
+$large: 40px
+
+=setCircleIcon($size)
+    font-size: $size * 0.66
+    width: $size
+    height: $size
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: $radius-circle
+    
+.icon
+    +setCircleIcon($small)
+    color: white
+    &-color
+        &--blue
+            background-color: $color-blue
