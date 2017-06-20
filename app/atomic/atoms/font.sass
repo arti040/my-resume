@@ -18,11 +18,14 @@ $font-size-text--base:      15px
 $font-size-text--large:     18px
 
 /// @type px
-$font-size-header--small:   24px
+$font-size-header--tiny:    13px
+/// @type px
+$font-size-header--small:   19px
 /// @type px
 $font-size-header--base:    30px
 /// @type px
 $font-size-header--large:   44px
+
 /// @type integer
 $font-weight--light:        300
 /// @type integer
@@ -42,6 +45,6 @@ $font-weight--bold:         700
 =setFontSet($fontSize, $font-weight: normal, $transform: none)
     font-family: $font-family--base
     font-weight: $font-weight
-    line-height: $fontSize
+    line-height: $fontSize * 1.33
     text-transform: $transform
     +fontSize($fontSize)
