@@ -43,24 +43,24 @@ $spacing-names: 'left', 'top', 'right', 'bottom'
 =generateSpacingModifierClasses($name, $direction:false)
   @if $direction == false
     &--base
-      #{$name}: $spacing-base
+      #{$name}: $spacing-base !important
     &--small
-      #{$name}: $spacing-small
+      #{$name}: $spacing-small !important
     &--medium
-      #{$name}: $spacing-medium
+      #{$name}: $spacing-medium !important
     &--large
-      #{$name}: $spacing-large
+      #{$name}: $spacing-large !important
     &--none
       #{$name}: 0 !important
   @else
     &--base
-      #{$name}-#{$direction}: $spacing-base
+      #{$name}-#{$direction}: $spacing-base !important
     &--small
-      #{$name}-#{$direction}: $spacing-small
+      #{$name}-#{$direction}: $spacing-small !important
     &--medium
-      #{$name}-#{$direction}: $spacing-medium
+      #{$name}-#{$direction}: $spacing-medium !important
     &--large
-      #{$name}-#{$direction}: $spacing-large
+      #{$name}-#{$direction}: $spacing-large !important
     &--none
       #{$name}-#{$direction}: 0 !important
 

@@ -12,6 +12,8 @@ $color-red:                 #c6051f
 /// @type hex
 $color-blue:                #429bf4
 /// @type hex
+$color-grey:                #999999
+/// @type hex
 $color-grey--light:         #f9f9f9
 /// @type hex
 $color-grey--dark:          #444444
@@ -32,6 +34,8 @@ $color-snapchat:            #FFE300
 /// @name Color Set Mixins
 =colorSets($colorType)
   $settings: unquote($colorType)
+  &-grey
+    #{$colorType}:      $color-grey !important
   &-graphite
     #{$colorType}:      $color-graphite !important
     &--dark

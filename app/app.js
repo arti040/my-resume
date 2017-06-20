@@ -2,7 +2,7 @@
 // === Vendor styles and libraries not loadable via Webpack
 import './vendors';
 
-console.log('Yo!');
+console.log('Nuffin here!');
 
 // === App Styles
 import './atomic.sass';
