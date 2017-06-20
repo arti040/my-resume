@@ -6,4 +6,8 @@
     
     &--small 
         +setFontSet($font-size-text--small)
-        
+
+@media (max-width: $screen-xs) 
+    .paragraph
+        &--small 
+            +setFontSet($font-size-text--base, $font-weight: normal, $transform: none)

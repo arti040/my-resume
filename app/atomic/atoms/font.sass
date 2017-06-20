@@ -6,6 +6,9 @@
 /// @type font-family
 $font-family--base: "Source Sans Pro", sans-serif
 
+/// @type number
+$line-height-factor: 1.33
+
 /// @type percent
 $font-size-base:            62.5%
 /// @type px
@@ -45,6 +48,6 @@ $font-weight--bold:         700
 =setFontSet($fontSize, $font-weight: normal, $transform: none)
     font-family: $font-family--base
     font-weight: $font-weight
-    line-height: $fontSize * 1.33
+    line-height: $fontSize * $line-height-factor
     text-transform: $transform
     +fontSize($fontSize)

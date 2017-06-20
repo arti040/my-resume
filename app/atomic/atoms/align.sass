@@ -7,13 +7,6 @@
         text-align: left
     &--right
         text-align: right
-
-@media (max-width: $screen-xs) 
-    .text
-        &-xs
-            &--center
-                text-align: center
-                justify-content: center
         
 @media (min-width: $screen-md) 
     .text
@@ -21,3 +14,25 @@
             &--right
                 text-align: right
                 justify-content: flex-end
+
+            &--left
+                text-align: left
+                justify-content: flex-start
+
+            &--center
+                text-align: center
+                justify-content: center
+
+@media (min-width: $screen-sm) 
+    .text
+        &-sm
+            &--center
+                text-align: center
+                justify-content: center
+
+@media (max-width: $screen-xs) 
+    .text
+        &-xs
+            &--center
+                text-align: center
+                justify-content: center

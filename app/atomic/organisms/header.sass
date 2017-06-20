@@ -22,3 +22,8 @@
         +setFontSet($font-size-header--tiny,  $font-weight--bold, uppercase)
         margin: $spacing-base 0 $spacing-small 0
         
+@media (max-width: $screen-xs) 
+    .header
+        &--main
+            +setFontSet($font-size-header--large - 6, $font-weight--light, capitalize)
+            margin: $spacing-small 0

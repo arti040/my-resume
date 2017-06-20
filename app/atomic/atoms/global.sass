@@ -1,7 +1,17 @@
 
+$max-content-width: 1000px
+
 body 
     +setFontSet($font-size-text--base)
     color: $color-graphite--dark
+    max-width: $max-content-width
 
 section
     margin-top: $spacing-medium
+    padding-right: $spacing-large
+
+
+@media (max-width: $screen-xs) 
+    section
+        padding-right: 0
+        margin-bottom: $spacing-large
