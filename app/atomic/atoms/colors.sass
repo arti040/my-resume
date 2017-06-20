@@ -7,6 +7,8 @@ $color-graphite:            #657486
 $color-graphite--dark:      #242a33
 /// @type hex
 $color-red:                 #c6051f
+/// @type hex
+$color-blue:                #429bf4
 
 /// $type string
 $color-transparent:         transparent
@@ -25,11 +27,13 @@ $color-snapchat:            #FFE300
 =colorSets($colorType)
   $settings: unquote($colorType)
   &-graphite
-    #{$colorType}:      $color-graphite
+    #{$colorType}:      $color-graphite !important
     &--dark
-      #{$colorType}:    $color-graphite--dark
+      #{$colorType}:    $color-graphite--dark !important
   &-red
-    #{$colorType}:      $color-red
+    #{$colorType}:      $color-red !important
+  &-blue
+    #{$colorType}:      $color-blue !important
   &-vendor
     &--facebook
       #{$colorType}: $color-facebook
