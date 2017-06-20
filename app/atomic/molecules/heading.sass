@@ -8,7 +8,8 @@
     a
         color: inherit
     i 
-        margin-right: $spacing-small
+        margin-right: $spacing-base/2
+
     &--main
         +setFontSet($font-size-header--large, $font-weight--light, capitalize)
         color: $color-black
@@ -22,7 +23,11 @@
     &--tiny
         +setFontSet($font-size-header--tiny,  $font-weight--bold, uppercase)
         margin: $spacing-base 0 $spacing-small 0
-        color: $color-graphite
+        color: $color-graphite  
+    &--special
+        +setFontSet($font-size-header--tiny,  $font-weight--bold, uppercase)
+        margin: $spacing-base 0 $spacing-small 0
+        color: $color-red
         
 @media (max-width: $screen-xs) 
     .header
