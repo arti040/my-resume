@@ -1,0 +1,31 @@
+
+.header
+    +withoutSpacing()
+    +setFontSet($font-size-header--base, $font-weight--normal)
+    
+    &--em
+        font-style: normal
+    a
+        color: inherit
+    i 
+        margin-right: $spacing-small
+    &--main
+        +setFontSet($font-size-header--large, $font-weight--light, capitalize)
+        color: $color-black
+
+    &--section
+        +setFontSet($font-size-header--base,  $font-weight--light, capitalize)
+        margin: $spacing-base 0
+    &--small
+        +setFontSet($font-size-header--small,  $font-weight--normal, capitalize)
+        margin-top: $spacing-base
+    &--tiny
+        +setFontSet($font-size-header--tiny,  $font-weight--bold, uppercase)
+        margin: $spacing-base 0 $spacing-small 0
+        color: $color-graphite
+        
+@media (max-width: $screen-xs) 
+    .header
+        &--main
+            +setFontSet($font-size-header--large - 6, $font-weight--light, capitalize)
+            margin: $spacing-small 0
