@@ -75,6 +75,7 @@ exports.setOutput = function (ENV, dir, filepath) {
   let output = ENV == 'test' ? {} : {
     path:           path.resolve(dir,filepath),
     publicPath:     ENV === 'prod' ? '/' : 'http://localhost:8080/',
+    //publicPath:     ENV === 'prod' ? '/' : 'http://10.10.5.124:8080',
     filename:       ENV === 'prod' ? '[name]-[hash].js' : '[name].bundle.js',
   };
   return output;
@@ -88,7 +89,9 @@ exports.setDevServer = function (dir,filepath) {
       cached: false,
       colors: true,
       chunk: false
-    }
+    },
+    compress: true,
+    disableHostCheck: true
   };
   return devServer;
 };

@@ -37,7 +37,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "webpack-dev-server --env dev --history-api-fallback --progress",
+    "server": "webpack-dev-server --port 8080 --env dev --history-api-fallback --progress",
     "start": "export NODE_ENV=dev && npm run server",
     "build": "export NODE_ENV=prod && rimraf dist && webpack --env prod --bail --progress --profile"
   },
