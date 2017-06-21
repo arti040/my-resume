@@ -124,7 +124,6 @@ exports.setPlugins = function(ENV, dirpath) {
                 new CopyWebpackPlugin([
                     { from: dirpath + '/' + opts.settings.assetsDir, to: opts.settings.assetsDir }
                 ])
-
             )
             if(opts.settings.prod.minJS) { plugins.push(new UglifyJSPlugin()); }
             
