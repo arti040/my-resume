@@ -22,24 +22,6 @@ let webpackLoaders = {
     },
     sassLoader: (ENV) => ({
         test: /\.(sass|scss)$/,
-        /*
-            Use this if you want separate CSS files
-        */
-        // use: ExtractTextPlugin.extract({
-        //     fallback: 'style-loader',
-        //     use: [
-        //         {
-        //             loader: 'css-loader',
-        //             query: {
-        //                 sourceMap: ENV === 'dev' ? true : false,
-        //                 importLoaders: 2,
-        //                 minimize: true
-        //             }
-        //         },
-        //         'postcss-loader',
-        //         'sass-loader'
-        //     ]
-        // })
         loader: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
     }),
     assetsLoader: {
@@ -53,14 +35,8 @@ let webpackLoaders = {
 }
 
 exports.setEntry = function (ENV, entryUrl) {
-  let entry = ENV === 'test' ? {} : [ entryUrl ];
-  
-//   if(opts.icons.ionicons) {
-//       entry.push(opts.icons.sources.ionicons);
-//   }
-//   if(opts.icons.fontAwesome) {
-//       entry.push(opts.icons.sources.fontAwesome);
-//   }
+  let entry = ENV === 'test' ? {} : [ entryUrl ];  
+
   if(opts.frameworks.bootstrap) {
       if(opts.frameworks.gridBootstrapOnly) {
         entry.push(opts.frameworks.sources.grid);
@@ -76,7 +52,6 @@ exports.setOutput = function (ENV, dir, filepath) {
   let output = ENV == 'test' ? {} : {
     path:           path.resolve(dir,filepath),
     publicPath:     ENV === 'prod' ? '/' : 'http://localhost:8080/',
-    //publicPath:     ENV === 'prod' ? '/' : 'http://10.10.5.124:8080',
     filename:       ENV === 'prod' ? '[name]-[hash].js' : '[name].bundle.js',
   };
   return output;
@@ -122,7 +97,7 @@ exports.setPlugins = function(ENV, dirpath) {
         case 'dev':
             plugins.push(
                 new HtmlWebpackPlugin({
-                    template: 'app/index.html'
+                    template: dirpath + 'index.html'
                 })
             );
         break;
@@ -141,13 +116,8 @@ exports.setPlugins = function(ENV, dirpath) {
             else { minifyHTML = false }
 
             plugins.push(
-                /*
-                    Use this if you want separate CSS files
-                */
-                //new ExtractTextPlugin('style.css'),
-
                 new HtmlWebpackPlugin({
-                    template: 'app/index.html',
+                    template: dirpath + 'index.html',
                     //css: '/style.css',
                     minify: minifyHTML
                 }),
