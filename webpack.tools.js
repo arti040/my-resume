@@ -133,7 +133,7 @@ exports.setPlugins = function(ENV, dirpath) {
                 minifyHTML = {
                     removeAttributeQuotes: true,
                     removeComments: true,
-                    collapseInlineTagWhitespace: true,
+                    collapseInlineTagWhitespace: false,
                     collapseWhitespace: true,
                     conservativeCollapse: false
                 }
