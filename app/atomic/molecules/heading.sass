@@ -28,7 +28,12 @@
         +setFontSet($font-size-header--tiny,  $font-weight--bold, uppercase)
         margin: $spacing-base 0 $spacing-small 0
         color: $color-red
-        
+
+@media print
+    .header
+        &--tiny
+            margin-bottom: 0    
+
 @media (min-width: $screen-sm) 
     .header
         &--main

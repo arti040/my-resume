@@ -12,6 +12,11 @@
         margin: 0 $spacing-base 0 0
         font-size: $font-size-text--large
 
+@media print
+    .user-info
+        &__item
+            display: inline-block
+
 @media screen and (min-width: $screen-sm)
     .user-info
         &__list

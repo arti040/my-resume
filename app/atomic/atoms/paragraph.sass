@@ -8,6 +8,14 @@
         margin: 0
         +setFontSet($font-size-text--base, $font-weight: normal, $transform: none)
 
+
+@media print
+    .paragraph
+        //max-width: 50%
+        margin-top: 0
+        margin-bottom: $spacing-base
+
+
 @media (max-width: $screen-sm) 
     .paragraph
         &--small 

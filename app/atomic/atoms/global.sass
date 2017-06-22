@@ -22,8 +22,17 @@ em
 
 
 @media print 
+    .no-print 
+        display: none !important
     a[href]:after 
         content: none !important
+    .col-sm-6
+        width: 50%
+        float: left
+
+    .col-md-6
+        section
+            margin: 0
 
 @media (min-width: $screen-sm)
     
