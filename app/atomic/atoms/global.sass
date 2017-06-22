@@ -4,34 +4,42 @@ $max-content-width: 1000px
 body
     +setFontSet($font-size-text--base)
     color: $color-graphite--dark 
-    background-color: $color-graphite--light
-
+    background-color: $color-white  
+    margin-top: $spacing-medium
+    margin-bottom: $spacing-large
+    
 body > .container
     max-width: $max-content-width
 
-section
-    margin-top: $spacing-medium
-    margin-bottom: $spacing-large
-    padding-right: $spacing-large
+header,
+.content
+    padding: 0
 
+section
+    padding-right: 0
+    margin-bottom: $spacing-large    
+
+br
+    display: none
 em
     color: $color-grey
+
 
 @media print 
     a[href]:after 
         content: none !important
 
+@media (min-width: $screen-md)
 
-@media (max-width: $screen-xs)
-    body
-        background-color: white  
-    header,
-    .content
-        padding: 0
     section
-        padding-right: 0
-        margin-bottom: $spacing-large
+        padding-right: $spacing-large
+    
+    body
+        background-color: $color-graphite--light
 
-    br
-        display: none
+    br 
+        display: inline
+   
+
+    
 
