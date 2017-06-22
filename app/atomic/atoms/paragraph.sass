@@ -1,14 +1,15 @@
 
 .paragraph
     +withoutSpacing()
-    //margin-top: $spacing-small
+    margin-top: $spacing-base
     margin-bottom: $spacing-base
     
     &--small 
         margin: 0
-        +setFontSet($font-size-text--small)
+        +setFontSet($font-size-text--base, $font-weight: normal, $transform: none)
 
-@media (max-width: $screen-xs) 
+@media (max-width: $screen-sm) 
     .paragraph
         &--small 
-            +setFontSet($font-size-text--base, $font-weight: normal, $transform: none)
+            +setFontSet($font-size-text--small)
+
