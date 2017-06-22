@@ -1,0 +1,39 @@
+
+.user-info
+    width: 100%
+    &__content
+        display: flex
+        align-items: center
+        padding: $spacing-small
+        margin: $spacing-base 0
+
+    &__icon
+        color: $color-blue
+        margin: 0 $spacing-base 0 0
+        font-size: $font-size-text--large
+
+@media screen and (min-width: $screen-sm)
+    .user-info
+        &__list
+            display: flex
+            flex-wrap: wrap
+            align-items: center
+        &__item 
+            flex-basis: 50%
+
+        &__content
+
+        &__icon
+            +setCircleIcon($icon-large)
+            color: $color-white
+            background-color: $color-blue
+
+@media screen and (min-width: $screen-md)
+    .user-info
+        &__list
+            display: block
+            float: right
+        &__item 
+            display: list-item
+        &__icon
+            +setCircleIcon($icon-small)

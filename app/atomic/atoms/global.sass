@@ -11,10 +11,6 @@ body
 body > .container
     max-width: $max-content-width
 
-header,
-.content
-    padding: 0
-
 section
     padding-right: 0
     margin-bottom: $spacing-large    
@@ -29,10 +25,7 @@ em
     a[href]:after 
         content: none !important
 
-@media (min-width: $screen-md)
-
-    section
-        padding-right: $spacing-large
+@media (min-width: $screen-sm)
     
     body
         background-color: $color-graphite--light
@@ -40,6 +33,7 @@ em
     br 
         display: inline
    
-
-    
+@media (min-width: $screen-md)
+    section
+        padding-right: $spacing-large
 
