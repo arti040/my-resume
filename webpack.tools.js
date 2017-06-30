@@ -66,8 +66,8 @@ exports.setDevServer = function (dir,filepath) {
       colors: true,
       chunk: false
     },
-    compress: true,
-    disableHostCheck: true
+    compress: false,
+    //disableHostCheck: true
   };
   return devServer;
 };
