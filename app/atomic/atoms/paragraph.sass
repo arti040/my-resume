@@ -3,19 +3,19 @@
     +withoutSpacing()
     margin-top: $spacing-small
     margin-bottom: $spacing-medium
-
+    +setFontSet($font-size-text--base, $font-weight: normal, $transform: none)
+    
     &--lead
         +setFontSet($font-size-text--large)
         margin-top: $spacing-base
     
-    &--small 
-        margin: 0
-        +setFontSet($font-size-text--base, $font-weight: normal, $transform: none)
+    // &--small 
+    //     margin: 0
+    //     +setFontSet($font-size-text--base, $font-weight: normal, $transform: none)
 
 
 @media print
     .paragraph
-        //max-width: 50%
         margin-top: 0
         margin-bottom: $spacing-base
         &--lead
