@@ -1,0 +1,34 @@
+.link {
+    display: block;
+    border: 1px rgba($color-blue,0.75) solid;
+    margin: $spacing-medium $spacing-small;
+    text-decoration: none;
+    padding: $spacing-small;
+    color: $color-blue;
+    border-radius: $radius-tiny;
+  }
+  @media print {
+    .link {
+      border: 0;
+    }
+  }
+  
+  @media screen and (min-width: $screen-sm) {
+    .link {
+      display: inline-block;
+      border: 0;
+      margin: 0;
+      padding: 0;
+      text-decoration: underline;
+      color: $color-blue;
+      cursor: pointer;
+    }
+  }
+  
+  @media screen and (min-width: $screen-md) {
+    .link {
+      &:hover {
+        color: darken($color-blue, 33%);
+      }
+    }
+  };

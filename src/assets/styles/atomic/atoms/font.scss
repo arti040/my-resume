@@ -1,0 +1,58 @@
+/// @name Import Font Suite
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&subset=latin-ext');
+/// @name Import Font Suite
+
+
+/// @type font-family
+$font-family--base: "Source Sans Pro", sans-serif;
+
+/// @type number
+$line-height-factor: 1.33;
+
+/// @type percent
+$font-size-base: 62.5%;
+/// @type px
+$font-size-text--tiny: 12px;
+/// @type px
+$font-size-text--small: 14px;
+/// @type px
+$font-size-text--base: 16px;
+/// @type px
+$font-size-text--large: 21px;
+
+/// @type px
+$font-size-header--tiny: 17px;
+/// @type px
+$font-size-header-xs--small: 20px;
+/// @type px
+$font-size-header--small: 22px;
+/// @type px
+$font-size-header--base: 36px;
+/// @type px
+$font-size-header-xs--base: 24px;
+/// @type px
+$font-size-header--large: 44px;
+
+/// @type integer
+$font-weight--light: 300;
+/// @type integer
+$font-weight--normal: 400;
+/// @type integer
+$font-weight--semibold: 600;
+/// @type integer
+$font-weight--bold: 700;
+
+
+/// @name Font Size Mixin
+/// @output { font-size: 1rem; font-size: 14px }
+@mixin fontSize($size) {
+  font-size: $size;
+}
+// @name setFontSet Mixin
+@mixin setFontSet($fontSize, $font-weight: normal, $transform: none) {
+  font-family: $font-family--base;
+  font-weight: $font-weight;
+  line-height: $fontSize * $line-height-factor;
+  text-transform: $transform;
+  @include fontSize($fontSize);
+}

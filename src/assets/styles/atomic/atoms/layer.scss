@@ -1,0 +1,104 @@
+// @type integer
+$layerZ-2: -2;
+// @type integer
+$layerZ-1: -1;
+// @type integer
+$layerZ0: 0;
+// @type integer
+$layerZ1: 100;
+// @type integer
+$layerZ2: 200;
+// @type integer
+$layerZ3: 300;
+// @type integer
+$layerZ4: 400;
+// @type integer
+$layerZ5: 999;
+// @type integer
+$layerModalBackdrop: 9997;
+// @type integer
+$layerModal: 9998;
+// @type integer
+$layerZ6: 9999;
+
+/// @name Layer 0
+/// @desc Material design paper layer 0 - laying on paper
+@mixin shadow--layer0() {
+  box-shadow: 0 3px 2px 0 rgba($color-grey--dark, .05);
+}
+/// @name Layer 1
+/// @desc Material design paper layer 1
+@mixin shadow--layer1() {
+  box-shadow: 0 2px 4px 2px rgba($color-grey--dark, .8);
+}
+/// @name Layer 2
+/// @desc Material design paper layer 2
+@mixin shadow--layer2() {
+  box-shadow: 0 5px 14px 0 rgba($color-grey--dark, .2);
+}
+/// @name Layer 3
+/// @desc Material design paper layer 3
+@mixin shadow--layer3() {
+  box-shadow: 0 5px 18px rgba(0,0,0,.1),0 rem(4px, 4px) rem(20px, 4px) rgba(0,0,0,.05);
+}
+/// @name Layer 4
+/// @desc Material design paper layer 4
+@mixin shadow--layer4() {
+  box-shadow: 0 5px 28px rgba(0,0,0,.05),0 rem(4px, 4px) rem(20px, 20px) rgba(0,0,0,.05);
+}
+/// @name Without shadow
+/// @desc Material design paper no shadow - flat
+@mixin shadow--none() {
+  box-shadow: none;
+}
+.shadow-layer {
+  &--0 {
+    @include shadow--layer0();
+  }
+  &--1 {
+    @include shadow--layer1();
+  }
+  &--2 {
+    @include shadow--layer2();
+  }
+  &--3 {
+    @include shadow--layer3();
+  }
+}
+.shadow-layer-hover {
+  &--0:hover {
+    @include shadow--layer0();
+  }
+  &--1:hover {
+    @include shadow--layer1();
+  }
+  &--2:hover {
+    @include shadow--layer2();
+  }
+  &--3:hover {
+    @include shadow--layer3();
+  }
+}
+.layer {
+  &--0 {
+    z-index: $layerZ0;
+  }
+  &--0 {
+    z-index: $layerZ1;
+  }
+  &--2 {
+    z-index: $layerZ2;
+  }
+  &--3 {
+    z-index: $layerZ3;
+  }
+  &--4 {
+    z-index: $layerZ4;
+  }
+  &--5 {
+    z-index: $layerZ5;
+  }
+  &--6 {
+    z-index: $layerZ6;
+  }
+}

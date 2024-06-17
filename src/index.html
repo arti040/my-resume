@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="@scripts/vendors.js" defer="defer"></script>
+
+    {% block styles %}
+      <link href="@styles/styles.scss" rel="stylesheet">
+    {% endblock %}
+    <title>Piotr Potera - Curriculum Vitae</title>
+  </head>
+  <body>
+      <div class="container shadow-layer--2 bg-color-white">
+        <header class="page-header">
+          <div class="row">
+            <div class="col-md-6">
+              <section class="flex text--center text-print--left text-md--left">
+                  <div class="flex flex-md--row">
+                    <img 
+                      class="no-print shape shape-type--circle shape-size--large shape-md-size--medium margin-right--base" 
+                      src="@images/avatar_big.jpg" 
+                      alt="Profile picture">
+                    <h1 class="header--main">
+                      Piotr Potera
+                      <em class="header--em">'84</em>
+                    </h1>
+                  </div>
+
+                  <p class="paragraph paragraph--lead">
+                    Frontend Developer with 16+ years of experience.
+                    Over 100 released projects made with and for companies all around the Earth Disc.
+                  </p>
+              </section>
+            </div>
+            <div class="col-md-6">
+              <section class="flex flex--row">
+                <div class="user-info">
+                  <ul class="list list--no-bullets user-info__list"> 
+                    <li class="list__item user-info__item">
+                      <a class="link user-info__content" href="mailto:contact@piotrpotera.com">
+                        <i class="fa fa-envelope-o icon user-info__icon"></i>
+                        contact@piotrpotera.com
+                      </a>
+                    </li>             
+                    <li class="list__item user-info__item">
+                      <a class="link user-info__content" href="https://www.google.co.uk/maps/place/%C5%81%C3%B3d%C5%BA,+Poland/@51.7730343,19.3401672,11z/data=!3m1!4b1!4m5!3m4!1s0x471bcb24754556af:0xcb7cae639b21dbac!8m2!3d51.7592485!4d19.4559833">
+                        <i class="fa fa-map-marker icon user-info__icon"></i> 
+                        Łódź, Poland
+                      </a>
+                    </li>        
+                    <li class="list__item user-info__item">
+                      <a class="link user-info__content" href="https://github.com/arti040">
+                        <i class="fa fa-github icon user-info__icon"></i> 
+                        github/arti040
+                      </a>
+                    </li>
+                    <li class="list__item user-info__item">
+                      <div class="user-info__content">
+                        <i class="fa fa-mobile-phone icon user-info__icon"></i>
+                        <a href="tel:+48 504 210 276">+48 504 210 276</a>
+                      </div>
+                  </ul>
+                </div>
+              </section>
+            </div>
+          </div>
+        </header>
+        <div class="content">
+          <div class="row">
+            <div class="col-sm-6">
+              <section>
+                <h2 class="header header--section">Work Experience</h2>
+
+                <div class="work-exp-item">
+                  <div class="work-exp-item__meta">
+                    <span class="work-exp-item__timespan">2023 — 2024</span>
+                    <h5 class="header header--small work-exp-item__position">Application architect/JS Developer</h5>
+                    <span class="work-exp-item__company">Nordea (KYC HUB)</span>
+                  </div>
+                  <div class="work-exp-item__content">
+                    <h5 class="header header--tiny color-graphite">Responsibilities</h5>
+                    <p class="paragraph">
+                      Responsible for developing new Profile 2.0 application + maintanace of old Profile App.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="work-exp-item">
+                  <div class="work-exp-item__meta">
+                    <span class="work-exp-item__timespan">2021 — 2023</span>
+                    <h5 class="header header--small work-exp-item__position">Application architect/JS Developer</h5>
+                    <span class="work-exp-item__company">Nordea (SME Digital HUB)</span>
+                  </div>
+                  <div class="work-exp-item__content">
+                    <h5 class="header header--tiny color-graphite">Responsibilities</h5>
+                    <p class="paragraph">
+                      Responsible for developing and mainstanence of: 
+                    </p>
+                    <ul class="list">
+                      <li>Corporate Access Light front-end, (role - main FE architect)</li>
+                      <li>Agreement Migration App front-end,</li>
+                      <li>Users Management App front-end (old and new)</li>
+                      <li>Implementation of CA Lite in main AA internal front-end</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="work-exp-item">
+                  <div class="work-exp-item__meta">
+                    <span class="work-exp-item__timespan">2019 — 2021</span>
+                    <h5 class="header header--small work-exp-item__position">Application architect/JS Developer</h5>
+                    <span class="work-exp-item__company">Appyourself.net</span>
+                  </div>
+                  <div class="work-exp-item__content">
+                    <h5 class="header header--tiny color-graphite">Responsibilities</h5>
+                    <p class="paragraph">
+                      Developing mobile apps - Angular, Ionic, Google Firebase, NodeJS.
+                    </p>
+                  </div>
+                </div>
+
+
+                <div class="work-exp-item">
+                  <div class="work-exp-item__meta">
+                    <span class="work-exp-item__timespan">2016 — present</span>
+                    <h5 class="header header--small work-exp-item__position">Frontend developer</h5>
+                    <span class="work-exp-item__company">as a contractor for Sii, Astek, Roche, DXC and others</span>
+                  </div>
+                  <div class="work-exp-item__content">
+                    <h5 class="header header--tiny color-graphite">Responsibilities</h5>
+                    <p class="paragraph">
+                      Developing internal CRMs and bank related transaction services - mainly in Angular.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="work-exp-item">
+                  <div class="work-exp-item__meta">
+                    <span class="work-exp-item__timespan">2014 — 2016</span>
+                    <h5 class="header header--small work-exp-item__position">Frontend developer, Graphic designer</h5>
+                    <span class="work-exp-item__company">at Inovatica (full-time)</span>
+                  </div>
+                  <div class="work-exp-item__content">
+                    <h5 class="header header--tiny">Responsibilities</h5>
+                    <p class="paragraph">
+                      Designing from scratch, templating and integrating apps, CRMs and clients' websites.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="work-exp-item">
+                  <div class="work-exp-item__meta">
+                    <span class="work-exp-item__timespan">2012 — 2014</span>
+                    <h5 class="header header--small work-exp-item__position">Frontend developer</h5>
+                    <span class="work-exp-item__company">at Modasphere Ltd. (contract)</span>
+                  </div>
+                  <div class="work-exp-item__content">
+                    <h5 class="header header--tiny">Responsibilities</h5>
+                    <p class="paragraph">
+                      Designing from scratch, templating (HTML5/CSS3) and integrating Modasphere clients' 
+                      websites. Furthermore, developing and optimizing CRM App.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="work-exp-item">
+                  <div class="work-exp-item__meta">
+                    <span class="work-exp-item__timespan">2011 — 2012</span>
+                    <h5 class="header header--small work-exp-item__position">JS developer</h5>
+                    <span class="work-exp-item__company">Ericpol Telecom (now Ericsson) (full-time)</span>
+                  </div>
+                  <div class="work-exp-item__content">
+                    <h5 class="header header--tiny">Responsibilities</h5>
+                    <p class="paragraph">
+                      Maintaing and developing projects - both internal and external ones.
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="work-exp-item">
+                  <div class="work-exp-item__meta">
+                    <span class="work-exp-item__timespan">2010 — 2011</span>
+                    <h5 class="header header--small work-exp-item__position">Frontend developer, Graphic designer</h5>
+                    <span class="work-exp-item__company">NetSharks (contract)</span>
+                  </div>
+                  <div class="work-exp-item__content">
+                    <h5 class="header header--tiny">Responsibilities</h5>
+                    <p class="paragraph">
+                      Designing, prototyping and integrating micropayment startup.
+                      Withal - maintaining company's internal projects.
+                    </p>
+                  </div>
+                </div>
+
+
+                <div class="work-exp-item">
+                  <div class="work-exp-item__meta">
+                    <span class="work-exp-item__timespan">2009 — 2010</span>
+                    <h5 class="header header--small work-exp-item__position">Frontend developer</h5>
+                    <span class="work-exp-item__company">at Modasphere Ltd. (contract)</span>
+                  </div>
+                  <div class="work-exp-item__content">
+                    <h5 class="header header--tiny">Responsibilities</h5>
+                    <p class="paragraph">
+                      Designing, preparing templates (HTML5/CSS3) and integrating (with what?) 
+                      Modasphere's clients' websites. Also, developing and optimizing Modasphere's CRM App.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="work-exp-item">
+                  <div class="work-exp-item__meta">
+                    <span class="work-exp-item__timespan">2005 - 2007</span>
+                    <h5 class="header header--small work-exp-item__position">Web Developer, Graphic designer</h5>
+                    <span class="work-exp-item__company">at TPNets.com (full-time)</span>
+                  </div>
+                  <div class="work-exp-item__content no-print">
+                    <h5 class="header header--tiny">Responsibilities</h5>
+                    <p class="paragraph">
+                      Designing websites and print materials (i.e: ads, posters, business cards). 
+                      Maintaining company's internal CRM and working directly with client's support.
+                    </p>
+                  </div>
+                </div>
+
+              </section>
+            </div>
+            <div class="col-sm-6">
+              <section>
+                <h2 class="header header--section margin-bottom--none">Skills & Competences</h2>
+                <p class="paragraph margin-top--none margin-bottom--large color-grey">Things I'm familiar with.</p>
+                
+                <div class="skill-item">
+                  <div class="skill-item__content">
+                    <h5 class="header header--special"><i class="fa fa-terminal"></i>Javascript</h5>
+                    <p class="paragraph">
+                      Angular, AngularJS, Ionic framework, Reactive Programming (RxJS),<br>
+                      Karma/Jasmine, jQuery, little experience with NodeJS<br> 
+                      and Google Firebase.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-item__content">
+                    <h5 class="header header--special"><i class="fa fa-html5"></i>HTML/CSS</h5>
+                    <p class="paragraph">
+                      SASS/LESS, OOCSS, Bootstrap, Foundation <br>or any other CSS framework, Flexbox, Atomic Design,<br> 
+                      Mobile First, RWD, WAI etc.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-item__content">
+                    <h5 class="header header--special"><i class="fa fa-git-square"></i>Source control tools</h5>
+                    <p class="paragraph">
+                      Git, Mercurial, SVN
+                    </p>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-item__content">
+                    <h5 class="header header--special"><i class="fa fa-first-order"></i>Project bundlers/Task runners</h5>
+                    <p class="paragraph">
+                      Webpack, Gulp, Grunt
+                    </p>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-item__content">
+                    <h5 class="header header--special"><i class="fa fa-heart"></i>Design & Prototyping</h5>
+                    <p class="paragraph">
+                      Adobe Photoshop, Axure
+                    </p>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-item__content">
+                    <h5 class="header header--special"><i class="fa fa-graduation-cap"></i>Others</h5>
+                    <p class="paragraph">
+                      Strong UI/UX skills, Linux terminal tools, Vagrant, Lisp
+                    </p>
+                  </div>
+                </div>
+
+              </section>
+
+              <section>
+                <h2 class="header header--section">Languages</h2>
+                <p class="paragraph">
+                  Polish <em>(native)</em>, English <em>(proficient)</em>, Ukrainian <em>(basic)</em>
+                </p>
+              </section>
+              
+              <section>
+                <h2 class="header header--section">Hobbies & Interests</h2>
+                <div class="interest-item">
+                  <div class="interest-item__content">
+                    <h5 class="header header--tiny">Retrocomputing</h5>
+                    <p class="paragraph">
+                      I'm a creator and a curator of Private Museum of Computers and Consoles in Łódź. 
+                      I am also an active member and supporter of the retro-computer society and related organisations; 
+                      often organise events, meetings and demo parties with and for the community.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="interest-item">
+                  <div class="interest-item__content">
+                    <h5 class="header header--tiny">Watches</h5>
+                    <p class="paragraph">
+                      Owner of dozen or so of some cool watches including Seiko, Orient, Longines<br>
+                      and few from great, polish micro-brand - Balticus.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="interest-item">
+                  <div class="interest-item__content">
+                    <h5 class="header header--tiny">Reading</h5>
+                    <p class="paragraph">
+                      I have great sympathy to the work of Terry Pratchett, Isaac Asimov, 
+                      Dale Carnegie, Steven Hawking and Guy Kawasaki.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="interest-item">
+                  <div class="interest-item__content">
+                    <h5 class="header header--tiny">Sports & Activities</h5>
+                    <p class="paragraph">
+                      Gym, Biking, Billiards
+                    </p>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <footer class="footer no-print">
+          <div class="footer__content">
+            <p class="paragraph text--small text--center">
+              &copy; Piotr Potera, 2024 
+              <i class="fa fa-circle circle-sep"></i> 
+              <a class="link" href="mailto:contact@piotrpotera.com">Contact</a>
+              <i class="fa fa-circle circle-sep"></i> 
+              <a class="link" href="https://github.com/arti040/my-resume">This resume on Github</a>
+            </p>
+          </div>
+        </footer>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+$max-content-width: 1000px;
+
+body {
+  @include setFontSet($font-size-text--base);
+  color: $color-graphite--dark;
+  background-color: $color-white;
+  margin-top: $spacing-medium;
+  margin-bottom: $spacing-large;
+}
+body > .container {
+  max-width: $max-content-width;
+}
+section {
+  padding-right: 0;
+  margin-bottom: $spacing-large;
+}
+br {
+  display: none;
+}
+em {
+  color: $color-grey;
+}
+
+@media print {
+  @page  { 
+    size: auto;
+    margin: 15mm 20mm 30mm 20mm;  
+  } 
+
+  .container { 
+    font-size: $font-size-text--small !important; 
+  }
+  .no-print {
+    display: none !important;
+  }
+  a[href]:after {
+    content: none !important;
+  }
+  .col-sm-6 {
+    width: 50%;
+    float: left;
+  }
+  .col-md-6 {
+    section {
+      margin: 0;
+    }
+  }
+}
+@media (min-width: $screen-sm) {
+  body {
+    background-color: $color-graphite--light;
+  }
+  br {
+    display: inline;
+  }
+}
+
+@media (min-width: $screen-md) {
+  section {
+    padding-right: $spacing-large;
+  }
+};

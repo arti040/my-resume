@@ -1,0 +1,30 @@
+.paragraph {
+  @include withoutSpacing();
+  margin-top: $spacing-small;
+  margin-bottom: $spacing-medium;
+  @include setFontSet($font-size-text--base, $font-weight: normal, $transform: none);
+
+  &--lead {
+    @include setFontSet($font-size-text--large);
+    margin-top: $spacing-base;
+  }
+}
+@media print {
+  .paragraph {
+    margin-top: 0;
+    margin-bottom: $spacing-base;
+    &--lead {
+      width: 66%;
+    }
+    br {
+      display: block;
+    }
+  }
+}
+@media (max-width: $screen-sm) {
+  .paragraph {
+    &--small {
+      @include setFontSet($font-size-text--small);
+    }
+  }
+};

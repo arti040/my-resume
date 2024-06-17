@@ -1,0 +1,14 @@
+.content {
+    padding: 0;
+  }
+  @media (min-width: $screen-sm) {
+    .content {
+      padding: 0 $spacing-medium;
+    }
+  }
+  
+  @media (min-width: $screen-md) {
+    .content {
+      padding: 0 $spacing-large;
+    }
+  };
